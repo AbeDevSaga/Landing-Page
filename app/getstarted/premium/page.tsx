@@ -16,6 +16,7 @@ const PremiumPlanPage = () => {
 
   // Filter free services
   const premiumServices = services.filter(service => service.type === "premium");
+  console.log("Premium Services:", premiumServices);
 
   useEffect(() => {
     const loadServices = async () => {
