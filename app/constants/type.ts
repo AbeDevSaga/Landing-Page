@@ -277,7 +277,7 @@ export type TFile = {
   gitRepository?: string;
   currentbranch?: string;
   lastCommitHash?: string;
-  collaborators?: String[];
+  collaborators?: string[];
 
   created_at?: Date;
   updated_at?: Date;

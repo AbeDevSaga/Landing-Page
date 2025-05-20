@@ -5,14 +5,12 @@ import Premium from "../../components/premium";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import { AppDispatch, RootState } from "@/redux/store";
-import { fetchServices } from "@/redux/slices/serviceSlice";
 
 const GetStartedCard: React.FC = ({}) => {
   const dispatch = useDispatch<AppDispatch>();
   const servicesList = useSelector(
     (state: RootState) => state.service.services
   ); // Access services from Redux store
-  const [isFetching, setIsFetching] = useState(true);
   const router = useRouter();
 
   //filter free services from servicesList
@@ -26,12 +24,12 @@ const GetStartedCard: React.FC = ({}) => {
 
   useEffect(() => {
     const loadServices = async () => {
-      try {
-        setIsFetching(true);
-        await dispatch(fetchServices());
-      } finally {
-        setIsFetching(false);
-      }
+      // try {
+      //   setIsFetching(true);
+      //   await dispatch(fetchServices());
+      // } finally {
+      //   setIsFetching(false);
+      // }
     };
     loadServices();
   }, [dispatch]);
